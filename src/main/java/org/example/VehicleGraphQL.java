@@ -57,7 +57,7 @@ public class VehicleGraphQL {
         DataFetcher<Vehicle> vehicleByIdDataFetcher = environment -> {
             String vehicleId = environment.getArgument("id"); // Get the 'id' argument from the query
             return vehicles.stream()
-                    .filter(vehicle -> vehicle.getId().equals(vehicle))
+                    .filter(vehicle -> vehicles.getId().equals(vehicle))
                     .findFirst()
                     .orElse(null); // Return null if not found
         };
